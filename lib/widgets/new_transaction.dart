@@ -18,24 +18,6 @@ class _NewTransactionState extends State<NewTransaction> {
 
   DateTime? _selectedDate;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void didUpdateWidget(covariant NewTransaction oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-
   void _submitData() {
     if (_amountController.text.isEmpty) {
       return;
@@ -109,18 +91,12 @@ class _NewTransactionState extends State<NewTransaction> {
                   AdaptiveFlatButton('Choose Date', _presentDataPicker)
                 ]),
               ),
-              // RaisedButton(
-              //   onPressed: _submitData,
-              //   child: Text('Add Transaction'),
-              //   textColor: Theme.of(context).textTheme.button!.color,
-              //   color: Theme.of(context).primaryColor,
-              // ),
               ElevatedButton(
                 onPressed: _submitData,
                 child: Text('Add Transaction'),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    Theme.of(context).primaryColor,
+                    Theme.of(context).canvasColor,
                   ),
                   textStyle: MaterialStateProperty.all(
                     TextStyle(
@@ -129,7 +105,6 @@ class _NewTransactionState extends State<NewTransaction> {
                   ),
                 ),
               ),
-
             ],
           ),
         ),

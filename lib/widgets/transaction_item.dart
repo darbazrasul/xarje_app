@@ -25,7 +25,7 @@ class TransactionItem extends StatelessWidget {
         ),
         title: Text(
           userTransaction.title,
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         subtitle: Text(
           DateFormat.yMMMd().format(userTransaction.date),
@@ -43,13 +43,13 @@ class TransactionItem extends StatelessWidget {
                 label: Text('delete'),
                 style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(
-                    Theme.of(context).errorColor,
+                    Theme.of(context).colorScheme.error,
                   ),
                 ),
               )
             : IconButton(
                 icon: Icon(Icons.delete),
-                color: Theme.of(context).errorColor,
+                color: Theme.of(context).colorScheme.error,
                 onPressed: () => deleteTx(userTransaction.id),
               ),
       ),

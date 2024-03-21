@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:lottie/lottie.dart';
 import '../models/transaction.dart';
 
 import './transaction_item.dart';
@@ -20,17 +20,17 @@ class TransactionList extends StatelessWidget {
                 return Column(
                   children: [
                     Text('No transactions added yet!',
-                        style: Theme.of(context).textTheme.subtitle1),
+                        style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(
                       height: 20,
                     ),
                     Container(
-                      height: constraints.maxHeight * 0.8,
-                      child: Image.asset(
-                        'assets/images/waiting.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                        height: constraints.maxHeight * 0.8,
+                        child: LottieBuilder.asset(
+                          'assets/animations/Animation.json',
+                          fit: BoxFit.cover,
+                          animate: true,
+                        )),
                   ],
                 );
               },
